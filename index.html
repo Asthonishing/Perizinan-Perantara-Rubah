@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjaga Kamar Imut</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffb74d; /* Latar belakang oranye */
+            font-family: 'Poppins', sans-serif; /* Font Poppins */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Menjaga bintang agar tetap di dalam layar */
+            position: relative;
+            padding: 10px; /* Tambahkan padding untuk perangkat kecil */
+        }
+
+        /* Bintang kecil */
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+        .star:nth-child(1) { top: 10%; left: 15%; }
+        .star:nth-child(2) { top: 30%; left: 25%; }
+        .star:nth-child(3) { top: 50%; left: 40%; }
+        .star:nth-child(4) { top: 20%; right: 20%; }
+        .star:nth-child(5) { top: 60%; right: 30%; }
+        .star:nth-child(6) { bottom: 15%; left: 35%; }
+        .star:nth-child(7) { bottom: 25%; right: 40%; }
+        .star:nth-child(8) { bottom: 10%; left: 20%; }
+        .star:nth-child(9) { bottom: 40%; right: 25%; }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px; /* Kurangi padding untuk tampilan lebih kompak */
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            max-width: 400px;
+            border: 3px solid #000; /* Border hitam */
+            width: 100%; /* Membuat container responsif */
+        }
+
+        .header h1 {
+            color: #ff6b6b;
+            font-size: 2rem; /* Ukuran font lebih kecil untuk mobile */
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1rem; /* Ukuran font lebih kecil untuk mobile */
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .image-section {
+            margin: 10px 0; /* Kurangi margin untuk tampilan lebih kompak */
+        }
+
+        .character-img {
+            width: 150px; /* Ukuran gambar lebih kecil untuk mobile */
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid #ffafcc;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .permission p {
+            font-size: 1rem; /* Ukuran font lebih kecil untuk mobile */
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        #izinButton {
+            background-color: #ff6b6b;
+            border: none;
+            color: white;
+            padding: 10px 20px; /* Kurangi padding untuk tombol */
+            font-size: 1rem; /* Ukuran font lebih kecil untuk mobile */
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #izinButton:hover {
+            background-color: #ff8fa3;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .response-message {
+            margin-top: 20px;
+            font-size: 1.1rem; /* Ukuran font lebih kecil untuk mobile */
+            color: #4d4dff;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Media Query untuk perangkat kecil */
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px; /* Sesuaikan padding */
+            }
+
+            .header h1 {
+                font-size: 1.8rem; /* Ukuran font lebih kecil */
+            }
+
+            .header p, .permission p {
+                font-size: 0.9rem; /* Ukuran font lebih kecil */
+            }
+
+            .character-img {
+                width: 130px; /* Ukuran gambar lebih kecil */
+            }
+
+            #izinButton {
+                padding: 8px 16px; /* Sesuaikan padding tombol */
+                font-size: 0.9rem; /* Ukuran font lebih kecil untuk tombol */
+            }
+
+            .response-message {
+                font-size: 1rem; /* Ukuran font lebih kecil */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bintang-bintang kecil di sekitar -->
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+    <div class="container">
+        <div class="header">
+            <h1>Hai! Mau Masuk?</h1>
+            <p>Aku penjaga imut kamar Raikhan! 😺</p>
+            <p>Tuanku sedang belajar, jangan ganggu ya!</p>
+        </div>
+        <div class="image-section">
+            <img src="images/28006-sewayaki-kitsune-no-senko-san-big-acrylic-key-chain-senko.jpg" alt="Karakter Imut" class="character-img">
+        </div>
+        <div class="permission">
+            <p>Kalau mau masuk, minta izin dulu di sini:</p>
+            <button id="izinButton">Minta Izin</button>
+        </div>
+        <div id="responseMessage" class="response-message"></div>
+    </div>
+
+    <script>
+        document.getElementById('izinButton').addEventListener('click', function() {
+            const responseMessage = document.getElementById('responseMessage');
+            responseMessage.innerHTML = "Permintaan izin dikirim! Tunggu sebentar ya 😄";
+            responseMessage.style.color = '#4d4dff';
+
+            // Simulasi waktu tunggu sebelum mengizinkan masuk
+            setTimeout(() => {
+                responseMessage.innerHTML = "Izin diterima! Kamu boleh masuk sekarang 🎉";
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
