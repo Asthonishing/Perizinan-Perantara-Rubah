@@ -85,38 +85,23 @@
             color: #555;
         }
 
-        #izinButton {
+        /* Tombol Izin Imut */
+        .permission a {
             background-color: #ff6b6b;
-            border: none;
             color: white;
-            padding: 10px 20px; /* Kurangi padding untuk tombol */
-            font-size: 1rem; /* Ukuran font lebih kecil untuk mobile */
+            padding: 10px 20px;
+            font-size: 1rem;
             font-weight: bold;
-            cursor: pointer;
             border-radius: 10px;
-            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
         }
 
-        #izinButton:hover {
+        .permission a:hover {
             background-color: #ff8fa3;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .response-message {
-            margin-top: 20px;
-            font-size: 1.1rem; /* Ukuran font lebih kecil untuk mobile */
-            color: #4d4dff;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
 
         /* Media Query untuk perangkat kecil */
@@ -135,15 +120,6 @@
 
             .character-img {
                 width: 130px; /* Ukuran gambar lebih kecil */
-            }
-
-            #izinButton {
-                padding: 8px 16px; /* Sesuaikan padding tombol */
-                font-size: 0.9rem; /* Ukuran font lebih kecil untuk tombol */
-            }
-
-            .response-message {
-                font-size: 1rem; /* Ukuran font lebih kecil */
             }
         }
     </style>
@@ -171,22 +147,11 @@
         </div>
         <div class="permission">
             <p>Kalau mau masuk, minta izin dulu di sini:</p>
-            <button id="izinButton">Minta Izin</button>
+            
+            <!-- Tombol yang mengarahkan ke Google Form -->
+            <a href="https://forms.gle/yFfechX48CfPUrEfA" target="_blank">Minta Izin Sekarang!</a>
+
         </div>
-        <div id="responseMessage" class="response-message"></div>
     </div>
-
-    <script>
-        document.getElementById('izinButton').addEventListener('click', function() {
-            const responseMessage = document.getElementById('responseMessage');
-            responseMessage.innerHTML = "Permintaan izin dikirim! Tunggu sebentar ya 😄";
-            responseMessage.style.color = '#4d4dff';
-
-            // Simulasi waktu tunggu sebelum mengizinkan masuk
-            setTimeout(() => {
-                responseMessage.innerHTML = "Izin diterima! Kamu boleh masuk sekarang 🎉";
-            }, 3000);
-        });
-    </script>
 </body>
 </html>
